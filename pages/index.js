@@ -7,7 +7,7 @@ export default function Home() {
 		<>
 			<Head>
 				<meta charset="utf-8" />
-				<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1"
@@ -18,14 +18,14 @@ export default function Home() {
 				/>
 				<meta
 					name="description"
-					content="G&C Septic Services, serving Sacramento and San Joaquin counties"
+					content="G&amp;C Septic Services, serving Sacramento and San Joaquin counties"
 				/>
 				<title>G&amp;C Septic Services</title>
 
-				<meta property="og:title" content="G&C Septic Services" />
+				<meta property="og:title" content="G&amp;C Septic Services" />
 				<meta
 					property="og:description"
-					content="G&C Septic Services, serving Sacramento and San Joaquin counties for more than 30 years"
+					content="G&amp;C Septic Services, serving Sacramento and San Joaquin counties for more than 30 years"
 				/>
 				<meta property="og:url" content="https://gandcseptic.com" />
 				<meta
@@ -33,7 +33,7 @@ export default function Home() {
 					content="https://gandcseptic.com/images/GC-Septic-Logo.png"
 				/>
 			</Head>
-			<body className="w-80">
+			<main className="w-80">
 				<div className="jumbotron jumbotron-fluid text-center w-100">
 					<h1 className="display-4">G&amp;C Septic Services</h1>
 					<p className="lead">
@@ -182,7 +182,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-			</body>
+			</main>
 		</>
 	);
 }

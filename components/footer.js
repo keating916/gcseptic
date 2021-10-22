@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer() {
 	return (
 		<div className="row">
@@ -12,6 +14,7 @@ export default function Footer() {
 					<a
 						href="https://goo.gl/maps/YCCeGN7uhPD3pcgm6"
 						target="_blank"
+						rel="noreferrer"
 					>
 						<img src="/images/gmaps.jpg" />
 					</a>
@@ -20,6 +23,7 @@ export default function Footer() {
 					<a
 						href="https://www.yelp.com/biz/g-and-c-septic-tank-service-wilton"
 						target="_blank"
+						rel="noreferrer"
 					>
 						<img src="/images/yelp.png" />
 					</a>
@@ -28,15 +32,16 @@ export default function Footer() {
 					<a
 						href="https://www.facebook.com/pages/category/Sewer-Service/G-C-Septic-353220071454498/"
 						target="_blank"
+						rel="noreferrer"
 					>
 						<img src="../images/facebook.png" />
 					</a>
 				</div>
 			</div>
 			<div className="text-center row col-md-2 mx-auto">
-				<a className="mr-3 ml-5 social-links" href="/" target="_same">
+				<Link href="/"><a className="mr-3 ml-5 social-links" >
 					Home
-				</a>
+				</a></Link>
 				<a
 					className="mr-3 social-links"
 					href="/apply-now"
