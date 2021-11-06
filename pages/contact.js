@@ -1,6 +1,6 @@
 export default function Contact() {
     return(
-        <body className="w-80">
+        <main className="w-80">
             <h1 className="text-center jumbotron">Contact us</h1>
             <div className="container">
                 <div className="row">
@@ -43,6 +43,6 @@ export default function Contact() {
                 <hr />
             </div>
             <hr />
-        </body>
+        </main>
     )
 }
