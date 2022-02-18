@@ -1,12 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Carousel from "../components/carousel";
+import carouselPhotos from '../components/carouselPhotos'
+
 
 export default function Home() {
 	return (
 		<>
 			<Head>
-				<meta charset="utf-8" />
+				<meta charSet="utf-8" />
 				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 				<meta
 					name="viewport"
@@ -33,8 +36,8 @@ export default function Home() {
 					content="https://gandcseptic.com/images/GC-Septic-Logo.png"
 				/>
 			</Head>
-			<main className="w-80">
-				<div className="jumbotron jumbotron-fluid text-center w-100">
+			<main>
+				<div className="text-center">
 					<h1 className="display-4">G&amp;C Septic Services</h1>
 					<p className="lead">
 						G &amp; C Septic Tank Service has been in business for
@@ -42,45 +45,8 @@ export default function Home() {
 						Counties, we are your trusted Septic Tank service
 						provider.
 					</p>
-					<div
-						id="carouselExampleSlidesOnly"
-						className="carousel slide"
-						data-ride="carousel"
-					>
-						<div className="carousel-inner">
-							<figure className="carousel-item active">
-								<img
-									className="d-block w-100"
-									src="./images/header.webp"
-									alt="Two pumping trucks"
-								/>
-								<figcaption>
-									We get to you quickly in an emergency!
-								</figcaption>
-							</figure>
-							<figure className="carousel-item">
-								<img
-									className="d-block w-100"
-									src="./images/time-for-next-pumping.webp"
-									alt="Is it time for your next septic pumping?"
-								/>
-								<figcaption>
-									Regular pumping saves you trouble later!
-								</figcaption>
-							</figure>
-							<figure className="carousel-item">
-								<img
-									className="d-block w-100"
-									src="./images/team.webp"
-									alt="Pumping truck with tank on trailer"
-								/>
-								<figcaption>
-									Our team will take care of you, from start
-									to finish!
-								</figcaption>
-							</figure>
-						</div>
-					</div>
+					<Carousel photos={carouselPhotos} />
+
 				</div>
 				<div className="container">
 					<div className="row text-center"></div>
@@ -172,7 +138,7 @@ export default function Home() {
 									<br />
 									<br />
 									<a
-										href="construction.php"
+										href="/services/construction"
 										className="btn btn-primary"
 									>
 										Find out more
