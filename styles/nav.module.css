@@ -33,6 +33,11 @@
 	background-color: #022972;
 }
 
+.changeCursor {
+	cursor: pointer;
+	color: white;
+}
+
 .navLink {
 	color: white;
 }

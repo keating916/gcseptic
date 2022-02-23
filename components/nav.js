@@ -62,7 +62,7 @@ export default function Nav() {
 							About
 						</a>
 					</Link>
-					<a className={styles.navLink} onClick={handleDropdown}>
+					<a className={styles.navLink, styles.changeCursor} onClick={handleDropdown}>
 						Services &#62;
 					</a>
 					<Link href="/contact">

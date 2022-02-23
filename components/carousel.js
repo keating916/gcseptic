@@ -12,8 +12,14 @@ const Carousel = (props) => {
 
     let images = props.photos;
     const [ index, setIndex ] = useState(0);
+    const [ lastChange, setLastChange ] = useState(0);
 
     const nextSlide = (i) => {
+        let now = Date.now();
+        if(now - lastChange < 5000 && i === "TIMER") {
+            return null;
+        }
+        setLastChange(now);
         let dif;
         if(i === "TIMER") {
             dif = 1;
@@ -22,15 +28,14 @@ const Carousel = (props) => {
         }
         let nextIndex = index + dif;
         if(nextIndex < 0) {
-            nextIndex = images.length;
+            nextIndex = images.length-1;
         }else if(nextIndex > images.length-1) {
             nextIndex = 0;
         }        
-        setIndex(nextIndex);
+        setIndex(nextIndex);;
     }
 
     useInterval(() => {
-        console.log("CHANGE");
         nextSlide("TIMER");
     }, 5000)
 
