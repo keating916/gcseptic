@@ -1,0 +1,28 @@
+.popoverButton {
+    padding-top: 0; 
+    padding-bottom: 0; 
+    border: 0; 
+    justify-content: center;
+    background: white;
+}
+
+.popover {
+    z-index: 1;
+    position: fixed;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.popoverRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.popoverDiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-left: 2em;
+    padding-right: 2em;
+    
+}

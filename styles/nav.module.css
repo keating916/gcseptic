@@ -33,6 +33,18 @@
 	background-color: #022972;
 }
 
+.row {
+	display:flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-content: center;
+}
+
+.rotated {
+	transform: rotate(180deg);
+	transition: 2s;
+}
+
 .changeCursor {
 	cursor: pointer;
 	color: white;

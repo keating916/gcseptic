@@ -9,12 +9,6 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<meta charSet="utf-8" />
-				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-				<meta
-					name="viewport"
-					content="width=device-width, initial-scale=1"
-				/>
 				<meta
 					name="keywords"
 					content="Stockton, Lodi, Sacramento, Septic Pumping, Septic Services, San Joaquin"
@@ -55,9 +49,8 @@ export default function Home() {
 							Services
 						</span>
 					</h1>
-					<div className="row">
-						<div className="col-md-4">
-							<div className="card">
+					<div className="card-row">
+							<div className="card link-card">
 								<a href="residential-pumping.php">
 									<img
 										className="card-img-top"
@@ -75,8 +68,6 @@ export default function Home() {
 										before you have a smelly mess in your
 										yard!
 									</p>
-									<br />
-									<br />
 									<a
 										href="residential-pumping.php"
 										className="btn btn-primary"
@@ -84,10 +75,8 @@ export default function Home() {
 										Find out more
 									</a>
 								</div>
-							</div>
 						</div>
-						<div className="col-md-4">
-							<div className="card">
+							<div className="card link-card">
 								<a href="commercial-pumping.php">
 									<img
 										className="card-img-top"
@@ -105,19 +94,16 @@ export default function Home() {
 										us today to schedule your regular
 										service.
 									</p>
-									<br />
-									<br />
+
 									<a
 										href="commercial-pumping.php"
-										className="btn btn-primary"
+										className="card-button"
 									>
 										Find out more
 									</a>
 								</div>
 							</div>
-						</div>
-						<div className="col-md-4">
-							<div className="card">
+							<div className="card link-card">
 								<a href="construction.php">
 									<img
 										className="card-img-top"
@@ -135,8 +121,6 @@ export default function Home() {
 										years combined experience, we can handle
 										it!
 									</p>
-									<br />
-									<br />
 									<a
 										href="/services/construction"
 										className="btn btn-primary"
@@ -144,7 +128,6 @@ export default function Home() {
 										Find out more
 									</a>
 								</div>
-							</div>
 						</div>
 					</div>
 				</div>

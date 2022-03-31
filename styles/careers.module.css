@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+}
+
+.secondaryNav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+}
+
+.toggled {
+    transform: rotate(180deg);
+}
+
+.descriptionContainer {
+    width: 70vw
+}
+
+.sidebarContainer {
+    display: flex;
+    flex-direction: column;
+    padding-left:3%;
+    padding-right: 3%;
+    padding-top: 3rem;
+    transition: margin-left .3s linear;
+    width: 30vw;
+}
+
+.menuHidden {
+    width: 30vw;
+    padding-left:3%;
+    padding-right: 3%;
+    display: flex;
+    flex-direction: column;
+    margin-left: -30vw;
+    padding-top: 3rem;
+    transition: margin-left .3s linear;
+}
+
+.jobContainer {
+    padding-left: 3rem;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.disabled {
+    pointer-events: none;
+    background-color: lightgray;
+}
+
+@media only screen and (max-width: 425px) {
+    .container {
+        overflow-x: hidden;
+    }
+
+    .descriptionContainer {
+        width: 60vw;
+        overflow: hidden;
+    }
+    
+    .sidebarContainer {
+        display: flex;
+        flex-direction: column;
+        padding-left:3%;
+        padding-right: 3%;
+        padding-top: 3rem;
+        transition: margin-left .3s linear;
+        width: 40vw;
+    }
+    
+    .menuHidden {
+        width: 40vw;
+        padding-left:3%;
+        padding-right: 3%;
+        display: flex;
+        flex-direction: column;
+        margin-left: -40vw;
+        padding-top: 3rem;
+        transition: margin-left .3s linear;
+    }
+}

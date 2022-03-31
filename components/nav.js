@@ -17,6 +17,8 @@ export default function Nav() {
 		setdropdown(false);
 	};
 
+	let symbol = dropdown ? 8743 : 8744
+
 	return (
 		<nav className={styles.navContainer}>
 			<div className={styles.hideButton}>
@@ -62,8 +64,8 @@ export default function Nav() {
 							About
 						</a>
 					</Link>
-					<a className={styles.navLink, styles.changeCursor} onClick={handleDropdown}>
-						Services &#62;
+					<a className={`${styles.navLink} ${styles.changeCursor}`} onClick={handleDropdown}>
+						Services {String.fromCharCode(symbol)}
 					</a>
 					<Link href="/contact">
 						<a className={styles.navLink} onClick={toggleButton}>
