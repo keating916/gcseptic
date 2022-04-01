@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function commercial() {
+export default function Commercial() {
 	return (
 		<>
 			<Head>
@@ -34,7 +34,7 @@ export default function commercial() {
 			</Head>
 			<main className="w-80">
 				<h1 className="text-center">Commercial Pumping Services</h1>
-				<div class="container text-center">
+				<div className="container text-center">
 					<h3>
 						Commercial Septic Pumping Services for Sacramento and
 						San Joaquin counties, including the cities of Lodi, Elk
@@ -51,26 +51,29 @@ export default function commercial() {
 							a camp ground, we can keep your guests happy, and
 							the pipes running smoothly. Our services include:
 						</p>
-						<div class="row text-left ">
-							<div class="col-md-2"></div>
-							<ul class="col-md-4">
-								<li>Grease Trap Pumping</li>
-								<li>System testing</li>
-								<li>Restaurant Grease Pumping</li>
-							</ul>
-							<ul class="col-md-6">
-								<li>RV Park Septic Pumping</li>
-								<li>Maintenance and Repair services</li>
-								<li>Electronic tank location</li>
-							</ul>
-						</div>
 
+						<div className="servicesListContainer">
+							<div className="serviceListColumn">
+								<ul className="serviceList">
+									<li>Grease Trap Pumping</li>
+									<li>System testing</li>
+									<li>Restaurant Grease Pumping</li>
+								</ul>
+							</div >
+							<div className="serviceListColumn">
+								<ul className="serviceList">
+									<li>RV Park Septic Pumping</li>
+									<li>Maintenance and Repair services</li>
+									<li>Electronic tank location</li>
+								</ul>
+							</div>
+						</div>
 						<p>
 							Your business could become the talk of the
 							neighborhood! Just be sure that it isn't for the
 							wrong reason! Call us before you have a smelly
 							problem on your hands at{" "}
-							<a href="tel:9163661111">916-366-1111</a>, or answer
+							<a href="tel:9163661111">916-366-1111</a>, or
 							fill out the form below!
 						</p>
 					</div>

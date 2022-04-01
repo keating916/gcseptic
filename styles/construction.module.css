@@ -1,0 +1,19 @@
+.heathImg {
+    width: 90vw;
+    max-width: 110px; 
+    max-width: 700px; 
+    margin: auto;
+}
+
+.imgRow {
+    width: 90vw;
+    margin: auto;
+}
+
+.constructionImg {
+    max-width: 30%;
+    min-width: 200px;
+    padding-left: 1.6%;
+    padding-left: 1.6%;
+    padding-bottom: 1.6%;
+}

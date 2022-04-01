@@ -44,7 +44,7 @@ const Carousel = (props) => {
     return(
         <div className={styles.slideshowContainer}>
 
-            <div className={styles.mySlides, styles.fade}>
+            <div className={`${styles.mySlides}, ${styles.fade}`}>
                 <div className={styles.numbertext}>{index+1} / {images.length}</div>
                 <Image src={currentImage.image} className={styles.bannerImage} alt={currentImage.alt} />
                 <div className={styles.text}>{currentImage.caption}</div>

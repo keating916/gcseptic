@@ -1,0 +1,33 @@
+.accordionItem {
+    max-height: 2.6rem;
+    overflow-y: hidden;
+    margin-top: 10px;
+    
+}
+
+.accordionItem.shown {
+    max-height: max-content;
+    transition: max-height 2s ease-in-out;
+    background-color: lightgray;
+}
+
+.question {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border: none;
+    background-color: lightgray;
+}
+
+.symbol {
+    color: black;
+    transition: transform .3s;
+
+}
+
+.symbol.changed {
+    transform: rotate(180deg);
+    transition: transform .3s;
+}

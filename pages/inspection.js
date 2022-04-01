@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 
-import styles from "../../styles/inspection.module.css";
+import styles from "../styles/inspection.module.css";
 
 export default function Inspection() {
 	const [popover, setPopover] = useState(false);
@@ -37,18 +37,18 @@ export default function Inspection() {
 					content="https://gandcseptic.com/images/pumping2.webp"
 				/>
 			</Head>
-			<main class="container">
-				<h1 class="text-center">Septic Evaluation Request Form</h1>
-				<form method="post" action="submit.php">
+			<main className="container">
+				<h1 className="text-center">Septic Evaluation Request Form</h1>
+				<div className={styles.inspectionDescription}>
 					<h4>Septic inspection includes:</h4>
 					<ol>
-						<div class="row">
-							<div class="col">
+						<div className={styles.listContainer}>
+							<div className={styles.listColumn}>
 								<li>Dig out tank lids if necessary</li>
 								<li>Evaluate Tank</li>
 								<li>Test leaching system</li>
 							</div>
-							<div class="col">
+							<div className={styles.listColumn}>
 								<li>Pump Tank</li>
 								<li>Evaluate Tank Components</li>
 								<li>Take site measurements and photos</li>
@@ -80,6 +80,9 @@ export default function Inspection() {
 							inspections@gandcseptic.com
 						</a>
 					</h6>
+				</div>
+				<form method="post" action="submit.php">
+					
 					<h5>Property Information</h5>
 					<label for="requestedDate">
 						Requested Date of Service:
@@ -88,31 +91,31 @@ export default function Inspection() {
 						type="date"
 						name="requestedDate"
 						id="requestedDate"
-						class="form-control"
+						className="form-control"
 					/>
 					<label for="Address">Property Address:</label>
 					<input
-						class="form-control"
+						className="form-control"
 						type="text"
 						name="propertyAddress"
 						id="Address"
 						required
 					/>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="city">City:</label>
 							<input
-								class="form-control col"
+								className="form-control col"
 								type="text"
 								name="city"
 								id="city"
 								required
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="zipCode">Zip Code:</label>
 							<input
-								class="form-control "
+								className="form-control "
 								type="number"
 								name="zipCode"
 								id="zipCode"
@@ -120,11 +123,11 @@ export default function Inspection() {
 							/>
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="propertybeds"># of Bedrooms:</label>
 							<input
-								class="form-control col"
+								className="form-control col"
 								type="number"
 								name="propertybeds"
 								id="propertybeds"
@@ -132,7 +135,7 @@ export default function Inspection() {
 								required
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="tankLids">Tank Lids</label>
 							<button
 								type="button"
@@ -178,7 +181,7 @@ export default function Inspection() {
 								</div>
 							)}
 							<select
-								class="form-control "
+								className="form-control "
 								type="dropdown"
 								name="tankLids"
 								id="tankLids"
@@ -196,12 +199,12 @@ export default function Inspection() {
 								</option>
 							</select>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="lastPumped">
 								Date of last pumping:
 							</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="date"
 								name="lastPumped"
 								id="lastPumped"
@@ -209,30 +212,30 @@ export default function Inspection() {
 							/>
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="multipleSeptic">
 								Is there more than one septic system on
 								property:
 							</label>
-							<div class="form-check form-check-inline">
+							<div className="form-check form-check-inline">
 								<input
-									class="form-check-input"
+									className="form-check-input"
 									type="radio"
 									value="Yes"
 									name="multipleSeptic"
 									id="multipleSepticYes"
 								/>
 								<label
-									class="form-check-label col-form-label"
+									className="form-check-label col-form-label"
 									for="multipleSepticYes"
 								>
 									Yes
 								</label>
 							</div>
-							<div class="form-check form-check-inline">
+							<div className="form-check form-check-inline">
 								<input
-									class="form-check-input"
+									className="form-check-input"
 									type="radio"
 									value="No"
 									name="multipleSeptic"
@@ -240,20 +243,20 @@ export default function Inspection() {
 									checked
 								/>
 								<label
-									class="form-check-label col-form-label"
+									className="form-check-label col-form-label"
 									for="multipleSepticNo"
 								>
 									No
 								</label>
 							</div>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="septicDrain">
 								Does all plumbing drain into septic?
 							</label>
-							<div class="form-check form-check-inline">
+							<div className="form-check form-check-inline">
 								<input
-									class="form-check-input"
+									className="form-check-input"
 									type="radio"
 									value="Yes"
 									name="septicDrain"
@@ -261,22 +264,22 @@ export default function Inspection() {
 									checked
 								/>
 								<label
-									class="form-check-label col-form-label"
+									className="form-check-label col-form-label"
 									for="plumbingYes"
 								>
 									Yes
 								</label>
 							</div>
-							<div class="form-check form-check-inline">
+							<div className="form-check form-check-inline">
 								<input
-									class="form-check-input"
+									className="form-check-input"
 									type="radio"
 									value="No"
 									name="septicDrain"
 									id="plumbingNo"
 								/>
 								<label
-									class="form-check-label col-form-label"
+									className="form-check-label col-form-label"
 									for="plumbingNo"
 								>
 									No
@@ -290,16 +293,16 @@ export default function Inspection() {
 					<textarea
 						name="previousProblems"
 						id="previousProblems"
-						class="form-control"
+						className="form-control"
 					></textarea>
 
 					<h5>Parties Involved</h5>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="paymentType">Party Paying:</label>
-							<div class="form-check form-check-inline">
+							<div className="form-check form-check-inline">
 								<input
-									class="form-check-input"
+									className="form-check-input"
 									type="radio"
 									value="seller"
 									name="partyPaying"
@@ -307,22 +310,22 @@ export default function Inspection() {
 									checked
 								/>
 								<label
-									class="form-check-label col-form-label"
+									className="form-check-label col-form-label"
 									for="seller"
 								>
 									Seller
 								</label>
 							</div>
-							<div class="form-check form-check-inline">
+							<div className="form-check form-check-inline">
 								<input
-									class="form-check-input"
+									className="form-check-input"
 									type="radio"
 									value="buyer"
 									name="partyPaying"
 									id="buyer"
 								/>
 								<label
-									class="form-check-label col-form-label"
+									className="form-check-label col-form-label"
 									for="buyer"
 								>
 									Buyer
@@ -330,31 +333,31 @@ export default function Inspection() {
 							</div>
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="sellerName">Seller Name:</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="text"
 								name="sellerName"
 								id="sellerName"
 								required
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="sellerEmail">Email</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="email"
 								name="sellerEmail"
 								id="sellerEmail"
 								required
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="sellerPhone">Phone Number</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="tel"
 								name="sellerPhone"
 								id="sellerPhone"
@@ -362,33 +365,33 @@ export default function Inspection() {
 							/>
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="sellerAgentName">
 								Seller Agent Name:
 							</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="text"
 								name="sellerAgentName"
 								id="sellerAgentName"
 								required
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="sellerAgentEmail">Email</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="email"
 								name="sellerAgentEmail"
 								id="sellerAgentEmail"
 								required
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="sellerAgentPhone">Phone Number</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="tel"
 								name="sellerAgentPhone"
 								id="sellerAgentPhone"
@@ -396,60 +399,60 @@ export default function Inspection() {
 							/>
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="buyerName">Buyer Name:</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="text"
 								name="buyerName"
 								id="buyerName"
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="buyerEmail">Email</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="email"
 								name="buyerEmail"
 								id="buyerEmail"
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="buyerPhone">Phone Number</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="tel"
 								name="buyerPhone"
 								id="buyerPhone"
 							/>
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="buyerAgentName">
 								Seller Agent Name:
 							</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="text"
 								name="buyerAgentName"
 								id="buyerAgentName"
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="buyerAgentEmail">Email</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="email"
 								name="buyerAgentEmail"
 								id="buyerAgentEmail"
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="buyerAgentPhone">Phone Number</label>
 							<input
-								class="form-control"
+								className="form-control"
 								type="tel"
 								name="buyerAgentPhone"
 								id="buyerAgentPhone"
@@ -458,20 +461,20 @@ export default function Inspection() {
 					</div>
 
 					<h5>Payment Information</h5>
-					<p class="text-danger">
+					<p className="text-danger">
 						**Please note that if paying by check, it must be
 						presented at time of service**
 					</p>
-					<p class="text-danger">
+					<p className="text-danger">
 						**Please also note that we <b>DO NOT</b> bill through
 						escrow**
 					</p>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="paymentType">Payment Type:</label>
-							<div class="form-check form-check-inline">
+							<div className="form-check form-check-inline">
 								<input
-									class="form-check-input"
+									className="form-check-input"
 									type="radio"
 									value="Check"
 									name="paymentType"
@@ -479,22 +482,22 @@ export default function Inspection() {
 									checked
 								/>
 								<label
-									class="form-check-label col-form-label"
+									className="form-check-label col-form-label"
 									for="Check"
 								>
 									Check
 								</label>
 							</div>
-							<div class="form-check form-check-inline">
+							<div className="form-check form-check-inline">
 								<input
-									class="form-check-input"
+									className="form-check-input"
 									type="radio"
 									value="Credit"
 									name="paymentType"
 									id="Credit"
 								/>
 								<label
-									class="form-check-label col-form-label"
+									className="form-check-label col-form-label"
 									for="Credit"
 								>
 									Credit
@@ -503,66 +506,66 @@ export default function Inspection() {
 						</div>
 					</div>
 
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="payerName">Name on Card:</label>
 							<input
 								type="text"
-								class="form-control"
+								className="form-control"
 								name="payerName"
 								id="payerName"
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="cardNumber">Card Number:</label>
 							<input
 								type="text"
-								class="form-control"
+								className="form-control"
 								name="cardNumber"
 								id="cardNumber"
 							/>
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="Expiration">Expiration:</label>
 							<input
 								type="text"
-								class="form-control"
+								className="form-control"
 								name="Expiration"
 								id="Expiration"
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="CVV">CVV:</label>
 							<input
 								type="text"
-								class="form-control"
+								className="form-control"
 								name="CVV"
 								id="CVV"
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="cardNumber">Billing ZIP:</label>
 							<input
 								type="text"
-								class="form-control"
+								className="form-control"
 								name="billingZip"
 								id="billingZip"
 							/>
 						</div>
 					</div>
 
-					<div class="form-row">
-						<div class="col">
-							<label for="certifiedTrue" class="text-danger">
+					<div className="form-row">
+						<div className="col">
+							<label for="certifiedTrue" className="text-danger">
 								I certify that the above is true and correct to
 								the best of my knowledge
 							</label>
 						</div>
-						<div class="col">
+						<div className="col">
 							<input
-								class="form-check-input"
+								className="form-check-input"
 								type="checkbox"
 								value="true"
 								name="certifiedTrue"
@@ -571,22 +574,22 @@ export default function Inspection() {
 							/>
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="col">
+					<div className="form-row">
+						<div className="col">
 							<label for="requestorFirst">First name:</label>
 							<input
 								type="name"
-								class="form-control"
+								className="form-control"
 								name="requestorFirst"
 								id="requestorFirst"
 								required
 							/>
 						</div>
-						<div class="col">
+						<div className="col">
 							<label for="requestorLast">Last Name:</label>
 							<input
 								type="name"
-								class="form-control"
+								className="form-control"
 								name="requestorLast"
 								id="requestorLast"
 								required
@@ -594,7 +597,7 @@ export default function Inspection() {
 						</div>
 					</div>
 
-					<input class="form-control" type="submit" />
+					<input className="form-control" type="submit" />
 				</form>
 			</main>
 		</>

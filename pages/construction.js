@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import styles from '../styles/construction.module.css'
+
 export default function Construction() {
 	return (
 		<>
@@ -37,7 +39,6 @@ export default function Construction() {
 					Construction and Repair Services
 				</h1>
 				<div className="container text-center">
-					<article>
 						<h3>
 							From Sacramento to Stockton, we have your
 							construction and septic installation needs covered
@@ -51,20 +52,23 @@ export default function Construction() {
 							Stockton, we can help. Our construction services
 							include:
 						</p>
-						<div className="row text-left">
-							<div className="col-md-2"></div>
-							<ul className="col-md-4 ">
-								<li>New Septic Tank installation</li>
-								<li>New Leach system installation</li>
-								<li>New Dry Well installation</li>
-								<li>Complete System installation</li>
-							</ul>
-							<ul className="col-md-6">
-								<li>Septic tank repair</li>
-								<li>Removal of tree roots from septic tanks</li>
-								<li>Repair septic lines</li>
-								<li>Leach line repair</li>
-							</ul>
+						<div className="servicesListContainer">
+							<div class="serviceListColumn">
+								<ul className="serviceList">
+									<li>New Septic Tank installation</li>
+									<li>New Leach system installation</li>
+									<li>New Dry Well installation</li>
+									<li>Complete System installation</li>
+								</ul>
+								</div>
+								<div class="serviceListColumn">
+								<ul className="serviceList">
+									<li>Septic tank repair</li>
+									<li>Removal of tree roots from septic tanks</li>
+									<li>Repair septic lines</li>
+									<li>Leach line repair</li>
+								</ul>
+							</div>
 						</div>
 						<p>
 							We also have easy payment options through Hearth
@@ -79,7 +83,7 @@ export default function Construction() {
 							<img
 								src="https://app.gethearth.com/contractor_images/lodgepool-dba-septic-services-group/banner.jpg?color=blue&size_id=700x110"
 								alt="Hearth 700x110"
-								style={{ height: "110px", width: "700px" }}
+								className={styles.heathImg}
 							/>
 						</a>
 						<br />
@@ -90,44 +94,38 @@ export default function Construction() {
 							also fill out the form below, and we will contact
 							you as soon as possible!
 						</p>
-						<hr />
-						<div className="row">
+						<div className={styles.imgRow}>
 							<img
-								src="images/startdrilling.webp"
+								src="/images/startdrilling.webp"
 								alt="Starting to drill a hole"
-								className="col-md-4"
+								className={styles.constructionImg}
 							/>
 							<img
-								src="images/dig-hole.webp"
+								src="/images/dig-hole.webp"
 								alt="machines at job site"
-								className="col-md-4"
+								className={styles.constructionImg}
 							/>
 							<img
-								src="images/drilling.webp"
+								src="/images/drilling.webp"
 								alt="Drilling a dry well"
-								className="col-md-4"
+								className={styles.constructionImg}
 							/>
-						</div>
-						<br />
-						<div className="row">
 							<img
-								src="images/hole.webp"
+								src="/images/hole.webp"
 								alt="Dry well finished being dug"
-								className="col-md-4"
+								className={styles.constructionImg}
 							/>
 							<img
-								src="images/dry-well.webp"
+								src="/images/dry-well.webp"
 								alt="filling in a dry well"
-								className="col-md-4"
+								className={styles.constructionImg}
 							/>
 							<img
 								src="/images/tank-crane.webp"
 								alt="Using a backhoe to install a new Septic Tank"
-								className="img-fluid col-md-4"
+								className={styles.constructionImg}
 							/>
 						</div>
-					</article>
-					<hr />
 					<hr />
 				</div>
 			</main>

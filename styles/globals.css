@@ -27,6 +27,8 @@ main {
   flex-flow: column;
   align-content: center;
   justify-content: center;
+  width: 90vw;
+  margin: auto;
 }
 
 .center {
@@ -51,8 +53,8 @@ main {
 }
 
 .card {
-  min-width: 200px;
-  max-width: 400px;
+  min-width: 350px;
+  max-width: 25vw;
   display: flex;
   justify-content: space-between;
   flex-flow: column;
@@ -81,7 +83,10 @@ main {
   margin-right: auto;
 }
 
-.card-button {
+.img-fluid {
+  width: 90vw;
+  max-width: 730px;
+  margin: auto;
 }
 
 .service-team {
@@ -94,4 +99,31 @@ main {
 
 .serviceimg {
   min-width: 762px;
+}
+
+.servicesListContainer {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+}
+
+.serviceListColumn {
+  align-content:flex-start;
+  text-align: left;
+  width: 350px
+}
+
+.serviceList > li {
+  list-style-position: inside;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+  .serviceList {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }

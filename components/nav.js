@@ -80,27 +80,27 @@ export default function Nav() {
 					onMouseLeave={handleDropdown}
 					onClick={toggleButton}
 				>
-					<Link href="/services/residential">
+					<Link href="/residential">
 						<a className={styles.navLink} onClick={toggleButton}>
 							Residential Pumping
 						</a>
 					</Link>
-					<Link href="/services/commercial">
+					<Link href="/commercial">
 						<a className={styles.navLink} onClick={toggleButton}>
 							Commercial Pumping
 						</a>
 					</Link>
-					<Link href="/services/construction">
+					<Link href="/construction">
 						<a className={styles.navLink} onClick={toggleButton}>
 							Construction
 						</a>
 					</Link>
-					<Link href="/services/inspection">
+					<Link href="/inspection">
 						<a className={styles.navLink} onClick={toggleButton}>
 							Septic Inspections
 						</a>
 					</Link>
-					<Link href="/services/faq">
+					<Link href="/faq">
 						<a className={styles.navLink} onClick={toggleButton}>
 							FAQ
 						</a>

@@ -51,7 +51,7 @@ export default function Home() {
 					</h1>
 					<div className="card-row">
 							<div className="card link-card">
-								<a href="residential-pumping.php">
+								<a href="/residential">
 									<img
 										className="card-img-top"
 										src="images/pumping2.webp"
@@ -69,7 +69,7 @@ export default function Home() {
 										yard!
 									</p>
 									<a
-										href="residential-pumping.php"
+										href="/residential"
 										className="btn btn-primary"
 									>
 										Find out more
@@ -77,7 +77,7 @@ export default function Home() {
 								</div>
 						</div>
 							<div className="card link-card">
-								<a href="commercial-pumping.php">
+								<a href="/commercial">
 									<img
 										className="card-img-top"
 										src="images/commercial.webp"
@@ -96,7 +96,7 @@ export default function Home() {
 									</p>
 
 									<a
-										href="commercial-pumping.php"
+										href="/commercial"
 										className="card-button"
 									>
 										Find out more
@@ -104,7 +104,7 @@ export default function Home() {
 								</div>
 							</div>
 							<div className="card link-card">
-								<a href="construction.php">
+								<a href="/construction">
 									<img
 										className="card-img-top"
 										src="images/backhoe.webp"
@@ -122,7 +122,7 @@ export default function Home() {
 										it!
 									</p>
 									<a
-										href="/services/construction"
+										href="/construction"
 										className="btn btn-primary"
 									>
 										Find out more
