@@ -17,7 +17,7 @@ export default function Nav() {
 		setdropdown(false);
 	};
 
-	let symbol = dropdown ? 8743 : 8744
+	let symbol = 8743
 
 	return (
 		<nav className={styles.navContainer}>
@@ -53,7 +53,7 @@ export default function Nav() {
 				className={`${styles.navBar} ${changed ? styles.change : ""}`}
 				id="navbar"
 			>
-				<div>
+				<div className={styles.navBarDiv}>
 					<Link href="/">
 						<a className={styles.navLink} onClick={toggleButton}>
 							Home
@@ -64,9 +64,9 @@ export default function Nav() {
 							About
 						</a>
 					</Link>
-					<a className={`${styles.navLink} ${styles.changeCursor}`} onClick={handleDropdown}>
-						Services {String.fromCharCode(symbol)}
-					</a>
+					<div className={`${styles.changeCursor} ${styles.row} ${styles.navLink} `} onClick={handleDropdown}>
+						<p className={`${styles.p1}`} >Services </p><p className={`${styles.navLink} ${styles.p2} ${dropdown ? styles.rotated : ""}`}> &#9660;</p>
+					</div>
 					<Link href="/contact">
 						<a className={styles.navLink} onClick={toggleButton}>
 							Contact
@@ -77,7 +77,7 @@ export default function Nav() {
 					className={`${styles.navDropdown} ${
 						dropdown ? styles.show : ""
 					}`}
-					onMouseLeave={handleDropdown}
+					onMouseLeave={toggleButton}
 					onClick={toggleButton}
 				>
 					<Link href="/residential">
