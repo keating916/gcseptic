@@ -80,6 +80,7 @@ export default function Inspection() {
 						<a 
 							style={{textDecoration: "underline"}}
 							target="_blank" 
+							rel="noreferrer"
 							href="/inspection.pdf"
 						>
 							HERE
@@ -89,6 +90,7 @@ export default function Inspection() {
 							style={{textDecoration: "underline"}}
 							href="mailto:inspections@gandcseptic.com"
 							target="_blank"
+							rel="noreferrer"
 						>
 							inspections@gandcseptic.com
 						</a>
