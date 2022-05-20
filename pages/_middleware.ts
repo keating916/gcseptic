@@ -24,7 +24,6 @@ export function middleware(request: NextRequest) {
                 sameSite: "strict"
             });
         }
-        console.log(url);
         //filter out asset requests, and only log route requests with corresponding visitor cookie number
         if(!url.match(fav) && !url.match(img)) {
             let date = new Date()
