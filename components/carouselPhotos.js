@@ -4,17 +4,17 @@ import banner3 from '../public/images/banner3.png';
 
 const photos = [
     {
-        image: banner1,
+        image: '/images/banner1.png',
         alt: "Septic trucks and crew",
         caption: "In an emergency, We get to you FAST!"
     }, 
     {
-        image: banner2,
+        image: '/images/banner2.png',
         alt: "Time for pumping? Call us",
         caption: "Pumping regularly saves you trouble later"
     },
     {
-        image: banner3,
+        image: '/images/banner3.png',
         alt: "Man pumping out tank",
         caption: "We work hard so you don't have to",
     }

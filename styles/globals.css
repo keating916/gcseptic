@@ -12,6 +12,14 @@ a {
   color: #000;
 }
 
+.w95 {
+  width: 95vw;
+  margin: auto;
+}
+
+.bottom-spaced {
+  margin-bottom: 1em;
+}
 
 * {
   box-sizing: border-box;
@@ -27,8 +35,11 @@ main {
   flex-flow: column;
   align-content: center;
   justify-content: center;
-  width: 90vw;
   margin: auto;
+}
+
+.jumbotron {
+  color: #022972;
 }
 
 .center {
@@ -77,7 +88,7 @@ main {
 }
 
 .card-img-top {
-  max-width: 98%;
+  max-width: 348px;
   max-height: 304px;
   margin-left: auto;
   margin-right: auto;

@@ -38,7 +38,7 @@ export default function Construction() {
 				<h1 className="text-center jumbotron">
 					Construction and Repair Services
 				</h1>
-				<div className="container text-center">
+				<div className="container text-center w95">
 						<h3>
 							From Sacramento to Stockton, we have your
 							construction and septic installation needs covered
@@ -53,7 +53,7 @@ export default function Construction() {
 							include:
 						</p>
 						<div className="servicesListContainer">
-							<div class="serviceListColumn">
+							<div className="serviceListColumn">
 								<ul className="serviceList">
 									<li>New Septic Tank installation</li>
 									<li>New Leach system installation</li>
@@ -61,7 +61,7 @@ export default function Construction() {
 									<li>Complete System installation</li>
 								</ul>
 								</div>
-								<div class="serviceListColumn">
+								<div className="serviceListColumn">
 								<ul className="serviceList">
 									<li>Septic tank repair</li>
 									<li>Removal of tree roots from septic tanks</li>
@@ -126,7 +126,6 @@ export default function Construction() {
 								className={styles.constructionImg}
 							/>
 						</div>
-					<hr />
 				</div>
 			</main>
 		</>

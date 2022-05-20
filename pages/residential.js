@@ -17,7 +17,7 @@ export default function Residential() {
 		</Head>
         <main>
             <h1 className="text-center jumbotron">Residential Septic Pumping</h1>
-			<div className="container text-center">
+			<div className="container text-center w95">
 				<h3>Whether you live in Galt, Stockton, or Sacramento, these services will have you covered:</h3>
 			  	<div className="servicesListContainer">
 					<div className="serviceListColumn">

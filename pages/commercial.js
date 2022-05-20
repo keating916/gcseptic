@@ -32,8 +32,8 @@ export default function Commercial() {
 					content="https://gandcseptic.com/images/grapes.jpg"
 				/>
 			</Head>
-			<main className="w-80">
-				<h1 className="text-center">Commercial Pumping Services</h1>
+			<main className="w95">
+				<h1 className="text-center jumbotron">Commercial Pumping Services</h1>
 				<div className="container text-center">
 					<h3>
 						Commercial Septic Pumping Services for Sacramento and

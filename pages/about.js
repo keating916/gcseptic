@@ -19,7 +19,7 @@ export default function About() {
                 <meta property="og:image" content="https://gandcseptic.com/images/team-square.jpg" />
             </Head>
             <main>
-                <div className="text-center">
+                <div className="text-center jumbotron">
                     <h1>The G&amp;C Leadership Team</h1>
                 </div>
                 <div className="container">

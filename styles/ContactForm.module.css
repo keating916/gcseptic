@@ -1,6 +1,6 @@
 
 .main {
-    padding: 5rem 0;
+    padding: 2rem 0;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -32,4 +32,8 @@
 .error {
     color: red;
     text-decoration: underline;
+}
+
+.divider {
+    width:90%;
 }

@@ -1,8 +1,9 @@
 .accordionItem {
-    max-height: 2.6rem;
+    max-height: 3.5rem;
     overflow-y: hidden;
-    margin-top: 10px;
-    
+    margin: auto;
+    max-width: 90vw;
+    margin-bottom: 1em;
 }
 
 .accordionItem.shown {
@@ -19,6 +20,7 @@
     justify-content: space-between;
     border: none;
     background-color: lightgray;
+    margin: auto;
 }
 
 .symbol {
@@ -30,4 +32,13 @@
 .symbol.changed {
     transform: rotate(180deg);
     transition: transform .3s;
+}
+
+.answer {
+    padding-left: 1em;
+}
+
+.answer > a {
+    text-decoration: underline;
+
 }

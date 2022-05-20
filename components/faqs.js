@@ -5,7 +5,7 @@ const faqs = [
     },
     {
         q: "How often should I get my system serviced?", 
-        a: "How often the system should be serviced depends ostly on the volume of waste that is produced. For larger families, pumping more often is,recommended. According to the <a href='https://www.epa.gov/septic/how-care-your-septic-system' target='_blank'>Environmental Protection Agency(EPA)</a> the average septic system should be inspected and serviced every 3-5 years."
+        a: "How often the system should be serviced depends mostly on the volume of waste that is produced. For larger families, pumping more often is recommended. According to the <a href='https://www.epa.gov/septic/how-care-your-septic-system' target='_blank'>Environmental Protection Agency(EPA)</a> the average septic system should be inspected and serviced every 3-5 years."
     },
     {
         q: "Where are my lids located?", 
@@ -21,7 +21,7 @@ const faqs = [
     },
     {
         q: "How can I tell if my system is failing?",
-        a: "There are a few signs that your system may be failing. <ul><li>System backing up into the house</li> <li>Pooling water or muddy soil in your yard or basement</li><li>Bright green grass in the drain field, especially in the dry season</li> <li>A strong odor near the septic system or drain field</li></ul>",
+        a: "There are a few signs that your system may be failing. <br /> &middot System backing up into the house <br /> &middot Pooling water or muddy soil in your yard or basement<br /> &middot Bright green grass in the drain field, especially in the dry season<br /> &middot A strong odor near the septic system or drain field",
     },
 ]
 

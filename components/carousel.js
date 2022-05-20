@@ -45,8 +45,7 @@ const Carousel = (props) => {
         <div className={styles.slideshowContainer}>
 
             <div className={`${styles.mySlides}, ${styles.fade}`}>
-                <div className={styles.numbertext}>{index+1} / {images.length}</div>
-                <Image src={currentImage.image} className={styles.bannerImage} alt={currentImage.alt} />
+                <img src={currentImage.image} className={styles.bannerImage} alt={currentImage.alt} layout="responsive" />
                 <div className={styles.text}>{currentImage.caption}</div>
             </div>
             <a className={styles.prev} name="prev" onClick={e => nextSlide(e)}>&#10094;</a>

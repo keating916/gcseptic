@@ -24,19 +24,17 @@ export default function Careers() {
             {/* <!-- Sidebar --> */}
             <div className={menuToggle ? styles.menuHidden : styles.sidebarContainer} id="sidebar-wrapper">
                 <div className={styles.sidebar} id="listGroup">
-                    <button value="Truck Driver" id="TD" className={job === "TD" ? styles.disabled : null} onClick={evt => changeJob(evt)}>Truck Driver</button>
-                    <button value="Construction Worker" className={job === "CT" ? styles.disabled : null}  id="CT" onClick={evt => changeJob(evt)}>Construction Worker</button>
-                    <button value="Septic Technician" className={job === "ST" ? styles.disabled : null}  id= "ST" onClick={evt => changeJob(evt)}>Septic Technician</button>
-                    <button value="Customer Service Representative" className={job === "CSR" ? styles.disabled : null}  id="CSR" onClick={evt => changeJob(evt)}>Customer Service Representative</button>
+                    <button value="Truck Driver" id="TD" className={`${job === "TD" ? styles.disabled : null} ${menuToggle ? styles.hidden : styles.shown}`} onClick={evt => changeJob(evt)}>Truck Driver</button>
+                    <button value="Construction Worker" className={`${job === "CT" ? styles.disabled : null} ${menuToggle ? styles.hidden : styles.shown}`}  id="CT" onClick={evt => changeJob(evt)}>Construction Worker</button>
+                    <button value="Septic Technician" className={`${job === "ST" ? styles.disabled : null} ${menuToggle ? styles.hidden : styles.shown}`}  id= "ST" onClick={evt => changeJob(evt)}>Septic Technician</button>
+                    <button value="Customer Service Representative" className={`${job === "CSR" ? styles.disabled : null} ${menuToggle ? styles.hidden : styles.shown}`}  id="CSR" onClick={evt => changeJob(evt)}>Customer Service Representative</button>
                 </div>
             </div>
             
-            {/* <!-- /#sidebar-wrapper -->
-            <!-- Page Content --> */}
             <div id="page-content-wrapper">
                 <nav className={styles.secondaryNav}>
-                    <button id="menu-toggle" onClick={handleClick}><img id="chevron" src="./images/leftChevron.svg" className={menuToggle ? styles.toggled : styles.menuChevron} alt="open/close positions menu" /></button>
-                    <h3 id="listHeading">Positions</h3>
+                    <button id="menu-toggle" className={styles.togglebutton} onClick={handleClick}><img id="chevron" src="./images/leftChevron.svg" className={menuToggle ? styles.toggled : styles.menuChevron} alt="open/close positions menu" /></button>
+                    <h2 id="listHeading">Positions</h2>
                 </nav>
                 <div className={styles.jobContainer}>
                     <div className={styles.descriptionContainer}>

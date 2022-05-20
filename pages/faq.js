@@ -61,12 +61,12 @@ export default function Faq() {
 								</button>
 								<div
 									id={`collapse${index}`}
-									className="collapse show"
+									className={styles.question}
 									aria-labelledby={`q${index}`}
 									data-parent="#accordionItem"
 								>
-									<div className="card-body">
-										<p
+									<div>
+										<p className={styles.answer}
 											dangerouslySetInnerHTML={{
 												__html: answer
 											}}

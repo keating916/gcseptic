@@ -12,12 +12,15 @@ export default function Nav() {
 		setdropdown(!dropdown);
 	};
 
-	const toggleButton = () => {
+	const toggleButton = (evt) => {
 		setchanged(!changed);
 		setdropdown(false);
 	};
 
-	let symbol = 8743
+	const closeMenu = () => {
+		setchanged(false);
+		setdropdown(false);
+	}
 
 	return (
 		<nav className={styles.navContainer}>
@@ -65,7 +68,8 @@ export default function Nav() {
 						</a>
 					</Link>
 					<div className={`${styles.changeCursor} ${styles.row} ${styles.navLink} `} onClick={handleDropdown}>
-						<p className={`${styles.p1}`} >Services </p><p className={`${styles.navLink} ${styles.p2} ${dropdown ? styles.rotated : ""}`}> &#9660;</p>
+						<p className={`${styles.p1}`} >Services </p>
+						<p className={`${styles.navLink} ${styles.p2} ${dropdown ? styles.rotated : ""}`}> &#9660;</p>
 					</div>
 					<Link href="/contact">
 						<a className={styles.navLink} onClick={toggleButton}>
@@ -77,7 +81,7 @@ export default function Nav() {
 					className={`${styles.navDropdown} ${
 						dropdown ? styles.show : ""
 					}`}
-					onMouseLeave={toggleButton}
+					onMouseLeave={closeMenu}
 					onClick={toggleButton}
 				>
 					<Link href="/residential">
@@ -108,6 +112,7 @@ export default function Nav() {
 				</div>
 			</div>
 			<div>
+				<p className={`${styles.changeCursor} ${styles.contactButton}`}>Contact Us</p>
 				<a
 					href="tel:9163661111"
 					className={styles.navPhone}

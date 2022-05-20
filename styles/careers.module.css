@@ -25,19 +25,32 @@
     padding-left:3%;
     padding-right: 3%;
     padding-top: 3rem;
-    transition: margin-left .3s linear;
+    transition: width .3s linear;
+    transition: margin .3s linear;
     width: 30vw;
 }
 
 .menuHidden {
-    width: 30vw;
+    width: 0;
     padding-left:3%;
     padding-right: 3%;
     display: flex;
     flex-direction: column;
-    margin-left: -30vw;
+    margin-left: -3rem;
     padding-top: 3rem;
     transition: margin-left .3s linear;
+    transition: width .3s linear;
+
+}
+
+.hidden {
+    opacity: 0%;
+    transition: opacity .3s linear
+}
+
+.shown {
+    opacity: 100%;
+    transition: opacity .3s linear
 }
 
 .jobContainer {
@@ -54,6 +67,10 @@
     background-color: lightgray;
 }
 
+.togglebutton {
+    margin-right: 1.25em;
+}
+
 @media only screen and (max-width: 425px) {
     .container {
         overflow-x: hidden;
@@ -62,26 +79,11 @@
     .descriptionContainer {
         width: 60vw;
         overflow: hidden;
+        margin-left:3%;
+        z-index: 3;
     }
-    
-    .sidebarContainer {
-        display: flex;
-        flex-direction: column;
-        padding-left:3%;
-        padding-right: 3%;
-        padding-top: 3rem;
-        transition: margin-left .3s linear;
-        width: 40vw;
-    }
-    
+
     .menuHidden {
-        width: 40vw;
-        padding-left:3%;
-        padding-right: 3%;
-        display: flex;
-        flex-direction: column;
-        margin-left: -40vw;
-        padding-top: 3rem;
-        transition: margin-left .3s linear;
+        margin-left: 0;
     }
 }

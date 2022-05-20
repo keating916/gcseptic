@@ -1,14 +1,77 @@
-.mySlides {display: none}
+.mySlides {
+  max-width: none;
+  overflow-x: clip;
+}
 .img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshowContainer {
   position: relative;
   margin: auto;
+  
+  max-width: none;
+  vertical-align: middle;
 }
 
 .bannerImage {
-    width: 100%;
+    max-width: none;
+    min-width: 100%;
+    overflow-x: clip;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 522px) {
+  .bannerImage {
+    height: 25vmax;
+    min-width: 100%;
+    overflow-x: clip;
+    translate: -25%;
+  }
+  .slideshowContainer {
+    height: 25vmax;
+  }
+}
+
+@media screen and (min-width: 523px) {
+  .bannerImage {
+    height: 50vmax;
+    max-width: none;
+    min-width: 100%;
+    overflow-x: clip;
+    vertical-align: middle;
+    translate: -35%;
+    max-height: 85vh;
+
+  }
+  .slideshowContainer {
+    position: relative;
+    overflow-x: clip;
+    vertical-align: middle;
+    margin: auto;
+    max-height: 85vh;
+    min-height: 50vmax;
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 1221px) {
+  .bannerImage {
+    height: 50vh;
+    max-width: none;
+    min-width: 100%;
+    overflow-x: clip;
+    vertical-align: middle;
+
+    translate: 0;
+  }
+  .slideshowContainer {
+    position: relative;
+    overflow-x: clip;
+    vertical-align: middle;
+    margin: auto;
+    min-height: 50vh;
+    max-width: none;
+  }
 }
 
 /* Next & previous buttons */

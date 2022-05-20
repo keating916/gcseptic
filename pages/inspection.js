@@ -4,7 +4,15 @@ import { useState } from "react";
 import styles from "../styles/inspection.module.css";
 
 export default function Inspection() {
-	const [popover, setPopover] = useState(false);
+	const [ popover, setPopover ] = useState(false);
+	const [ pageX, setPageX ] = useState(0);
+	const [ pageY, setPageY ] = useState(0);
+
+	const showPop = (evt) => {
+		setPopover(evt.type == "pointerenter" ? true : false);
+		setPageX(evt.clientX + 10);
+		setPageY(evt.clientY);
+	}
 
 	return (
 		<>
@@ -38,10 +46,10 @@ export default function Inspection() {
 				/>
 			</Head>
 			<main className="container">
-				<h1 className="text-center">Septic Evaluation Request Form</h1>
+				<h1 className="text-center jumbotron">Septic Evaluation Request Form</h1>
 				<div className={styles.inspectionDescription}>
-					<h4>Septic inspection includes:</h4>
-					<ol>
+					<h3>Septic inspection includes:</h3>
+					<ul>
 						<div className={styles.listContainer}>
 							<div className={styles.listColumn}>
 								<li>Dig out tank lids if necessary</li>
@@ -54,68 +62,77 @@ export default function Inspection() {
 								<li>Take site measurements and photos</li>
 							</div>
 						</div>
-					</ol>
-					<h5>
+					</ul>
+					<h4 className="w95 bottom-spaced">
 						Upon completion of the inspection, the report will be
 						compiled. The report will include evaluation notes,
 						photographs, diagrams of tanks on the site, permits that
 						the county has on file as well as recommendations for
 						repairs as needed.
-					</h5>
+					</h4>
 
-					<h6>
+					<h4 className="w95 bottom-spaced">
 						To request an inspection, please fill out form below
 						completely.
-					</h6>
-					<h6>
+					</h4>
+					<h4 className="w95 bottom-spaced">
 						Alternatively, you can download a PDF form{" "}
-						<a target="_blank" href="/inspection.pdf">
+						<a 
+							style={{textDecoration: "underline"}}
+							target="_blank" 
+							href="/inspection.pdf"
+						>
 							HERE
 						</a>{" "}
 						and email it to:{" "}
 						<a
+							style={{textDecoration: "underline"}}
 							href="mailto:inspections@gandcseptic.com"
 							target="_blank"
 						>
 							inspections@gandcseptic.com
 						</a>
-					</h6>
+					</h4>
 				</div>
-				<form method="post" action="submit.php">
+				<form className={styles.inspectionForm} method="post" action="submit.php">
 					
-					<h5>Property Information</h5>
-					<label for="requestedDate">
-						Requested Date of Service:
-					</label>
-					<input
-						type="date"
-						name="requestedDate"
-						id="requestedDate"
-						className="form-control"
-					/>
-					<label for="Address">Property Address:</label>
-					<input
-						className="form-control"
-						type="text"
-						name="propertyAddress"
-						id="Address"
-						required
-					/>
-					<div className="form-row">
-						<div className="col">
-							<label for="city">City:</label>
+					<h3>Property Information</h3>
+					<div>
+						<label htmlFor="requestedDate">
+							Requested Date of Service:
+						</label>
+						<input
+							type="date"
+							name="requestedDate"
+							id="requestedDate"
+							className="form-control"
+						/>
+					</div>
+					<div className={styles.formRow}>
+						<div className={styles.col}>
+							<label htmlFor="Address">Property Address:</label>
 							<input
-								className="form-control col"
+								className={`${styles.input25} ${styles.input}`}
+								type="text"
+								name="propertyAddress"
+								id="Address"
+								required
+							/>
+						</div>
+						<div className={styles.col}>
+							<label htmlFor="city">City:</label>
+							<input
+								className={`${styles.input25} ${styles.input}`}
 								type="text"
 								name="city"
 								id="city"
 								required
 							/>
 						</div>
-						<div className="col">
-							<label for="zipCode">Zip Code:</label>
+						<div className={styles.col}>
+							<label htmlFor="zipCode">Zip Code:</label>
 							<input
-								className="form-control "
+								className={`${styles.input25} ${styles.input}`}
 								type="number"
 								name="zipCode"
 								id="zipCode"
@@ -123,9 +140,9 @@ export default function Inspection() {
 							/>
 						</div>
 					</div>
-					<div className="form-row">
-						<div className="col">
-							<label for="propertybeds"># of Bedrooms:</label>
+					<div className={styles.formRow}>
+						<div className={styles.col}>
+							<label htmlFor="propertybeds"># of Bedrooms:</label>
 							<input
 								className="form-control col"
 								type="number"
@@ -135,19 +152,19 @@ export default function Inspection() {
 								required
 							/>
 						</div>
-						<div className="col">
-							<label for="tankLids">Tank Lids</label>
+						<div className={styles.col} >
+							<label htmlFor="tankLids">Tank Lids
 							<button
 								type="button"
-								tabindex="0"
+								tabIndex="0"
 								data-trigger="focus"
 								data-placement="bottom"
 								className={styles.popoverButton}
 								data-toggle="popover"
 								id="lidToggle"
 								data-html="true"
-								onMouseEnter={() => setPopover(true)}
-								onMouseLeave={() => setPopover(false)}
+								onPointerEnter={evt => showPop(evt)}
+								onPointerLeave={evt => showPop(evt)}
 							>
 								<img
 									className={styles.popoverButton}
@@ -155,9 +172,9 @@ export default function Inspection() {
 									src="/images/infoCircle.svg"
 									alt="Learn More"
 								/>
-							</button>
+							</button></label>
 							{popover && (
-								<div className={styles.popover}>
+								<div className={styles.popover} style={{top: `${pageY}px`, left:`${pageX}px`}}>
 									<p>
 										Lids are usually 18-24 inches below
 										ground level
@@ -199,8 +216,8 @@ export default function Inspection() {
 								</option>
 							</select>
 						</div>
-						<div className="col">
-							<label for="lastPumped">
+						<div className={styles.col}>
+							<label htmlFor="lastPumped">
 								Date of last pumping:
 							</label>
 							<input
@@ -212,358 +229,172 @@ export default function Inspection() {
 							/>
 						</div>
 					</div>
-					<div className="form-row">
-						<div className="col">
-							<label for="multipleSeptic">
+					<div className={styles.formRow}>
+						<div className={styles.col}>
+							<label htmlFor="multipleSeptic">
 								Is there more than one septic system on
 								property:
 							</label>
-							<div className="form-check form-check-inline">
-								<input
-									className="form-check-input"
-									type="radio"
-									value="Yes"
-									name="multipleSeptic"
-									id="multipleSepticYes"
-								/>
-								<label
-									className="form-check-label col-form-label"
-									for="multipleSepticYes"
-								>
-									Yes
-								</label>
-							</div>
-							<div className="form-check form-check-inline">
-								<input
-									className="form-check-input"
-									type="radio"
-									value="No"
-									name="multipleSeptic"
-									id="multipleSepticNo"
-									checked
-								/>
-								<label
-									className="form-check-label col-form-label"
-									for="multipleSepticNo"
-								>
-									No
-								</label>
+							<div className={styles.formRow}>
+								<div className="form-check form-check-inline">
+									<input
+										className="form-check-input"
+										type="radio"
+										value="Yes"
+										name="multipleSeptic"
+										id="multipleSepticYes"
+									/>
+									<label
+										className="form-check-label col-form-label"
+										htmlFor="multipleSepticYes"
+									>
+										Yes
+									</label>
+								</div>
+								<div className="form-check form-check-inline">
+									<input
+										className="form-check-input"
+										type="radio"
+										value="No"
+										name="multipleSeptic"
+										id="multipleSepticNo"
+										defaultChecked
+									/>
+									<label
+										className="form-check-label col-form-label"
+										htmlFor="multipleSepticNo"
+									>
+										No
+									</label>
+								</div>
 							</div>
 						</div>
-						<div className="col">
-							<label for="septicDrain">
+						<div className={styles.col}>
+							<label htmlFor="septicDrain">
 								Does all plumbing drain into septic?
 							</label>
-							<div className="form-check form-check-inline">
-								<input
-									className="form-check-input"
-									type="radio"
-									value="Yes"
-									name="septicDrain"
-									id="plumbingYes"
-									checked
-								/>
-								<label
-									className="form-check-label col-form-label"
-									for="plumbingYes"
-								>
-									Yes
-								</label>
-							</div>
-							<div className="form-check form-check-inline">
-								<input
-									className="form-check-input"
-									type="radio"
-									value="No"
-									name="septicDrain"
-									id="plumbingNo"
-								/>
-								<label
-									className="form-check-label col-form-label"
-									for="plumbingNo"
-								>
-									No
-								</label>
+							<div className={styles.formRow}>
+								<div className="form-check form-check-inline">
+									<input
+										className="form-check-input"
+										type="radio"
+										value="Yes"
+										name="septicDrain"
+										id="plumbingYes"
+										defaultChecked
+									/>
+									<label
+										className="form-check-label col-form-label"
+										htmlFor="plumbingYes"
+									>
+										Yes
+									</label>
+								</div>
+								<div className="form-check form-check-inline">
+									<input
+										className="form-check-input"
+										type="radio"
+										value="No"
+										name="septicDrain"
+										id="plumbingNo"
+									/>
+									<label
+										className="form-check-label col-form-label"
+										htmlFor="plumbingNo"
+									>
+										No
+									</label>
+								</div>
 							</div>
 						</div>
 					</div>
-					<label for="previousProblems">
+					<label htmlFor="previousProblems">
 						Any previous issues with system:
 					</label>
 					<textarea
 						name="previousProblems"
 						id="previousProblems"
-						className="form-control"
+						className={styles.formComments}
 					></textarea>
-
-					<h5>Parties Involved</h5>
-					<div className="form-row">
-						<div className="col">
-							<label for="paymentType">Party Paying:</label>
-							<div className="form-check form-check-inline">
-								<input
-									className="form-check-input"
-									type="radio"
-									value="seller"
-									name="partyPaying"
-									id="seller"
-									checked
-								/>
-								<label
-									className="form-check-label col-form-label"
-									for="seller"
-								>
-									Seller
-								</label>
-							</div>
-							<div className="form-check form-check-inline">
-								<input
-									className="form-check-input"
-									type="radio"
-									value="buyer"
-									name="partyPaying"
-									id="buyer"
-								/>
-								<label
-									className="form-check-label col-form-label"
-									for="buyer"
-								>
-									Buyer
-								</label>
+					<div className={styles.formRow}>
+						<div className={styles.col}>
+							<label htmlFor="paymentType">Party Paying:</label>
+							<div className={styles.formRow}>
+								<div className="form-check form-check-inline">
+									<input
+										className="form-check-input"
+										type="radio"
+										value="seller"
+										name="partyPaying"
+										id="seller"
+										defaultChecked
+									/>
+									<label
+										className="form-check-label col-form-label"
+										htmlFor="seller"
+									>
+										Seller
+									</label>
+								</div>
+								<div className="form-check form-check-inline">
+									<input
+										className="form-check-input"
+										type="radio"
+										value="buyer"
+										name="partyPaying"
+										id="buyer"
+									/>
+									<label
+										className="form-check-label col-form-label"
+										htmlFor="buyer"
+									>
+										Buyer
+									</label>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div className="form-row">
-						<div className="col">
-							<label for="sellerName">Seller Name:</label>
-							<input
-								className="form-control"
-								type="text"
-								name="sellerName"
-								id="sellerName"
-								required
-							/>
-						</div>
-						<div className="col">
-							<label for="sellerEmail">Email</label>
-							<input
-								className="form-control"
-								type="email"
-								name="sellerEmail"
-								id="sellerEmail"
-								required
-							/>
-						</div>
-						<div className="col">
-							<label for="sellerPhone">Phone Number</label>
-							<input
-								className="form-control"
-								type="tel"
-								name="sellerPhone"
-								id="sellerPhone"
-								required
-							/>
-						</div>
-					</div>
-					<div className="form-row">
-						<div className="col">
-							<label for="sellerAgentName">
-								Seller Agent Name:
+					<h5>Report Destination:</h5>
+					<div className={styles.formRow}>
+						<div className={styles.col}>
+							<label htmlFor="destinationName">
+								Name:
 							</label>
 							<input
-								className="form-control"
+								className={`${styles.input25} ${styles.input}`}
 								type="text"
-								name="sellerAgentName"
-								id="sellerAgentName"
-								required
+								name="destinationName"
+								id="destinationName"
 							/>
 						</div>
-						<div className="col">
-							<label for="sellerAgentEmail">Email</label>
+						<div className={styles.col}>
+							<label htmlFor="destinationEmail">Email</label>
 							<input
-								className="form-control"
+								className={`${styles.input25} ${styles.input}`}
 								type="email"
-								name="sellerAgentEmail"
-								id="sellerAgentEmail"
-								required
+								name="destinationEmail"
+								id="destinationEmail"
 							/>
 						</div>
-						<div className="col">
-							<label for="sellerAgentPhone">Phone Number</label>
+						<div className={styles.col}>
+							<label htmlFor="destinationPhone">Phone Number</label>
 							<input
-								className="form-control"
+								className={`${styles.input25} ${styles.input}`}
 								type="tel"
-								name="sellerAgentPhone"
-								id="sellerAgentPhone"
-								required
+								name="destinationPhone"
+								id="destinationPhone"
 							/>
 						</div>
 					</div>
-					<div className="form-row">
-						<div className="col">
-							<label for="buyerName">Buyer Name:</label>
-							<input
-								className="form-control"
-								type="text"
-								name="buyerName"
-								id="buyerName"
-							/>
-						</div>
-						<div className="col">
-							<label for="buyerEmail">Email</label>
-							<input
-								className="form-control"
-								type="email"
-								name="buyerEmail"
-								id="buyerEmail"
-							/>
-						</div>
-						<div className="col">
-							<label for="buyerPhone">Phone Number</label>
-							<input
-								className="form-control"
-								type="tel"
-								name="buyerPhone"
-								id="buyerPhone"
-							/>
-						</div>
-					</div>
-					<div className="form-row">
-						<div className="col">
-							<label for="buyerAgentName">
-								Seller Agent Name:
-							</label>
-							<input
-								className="form-control"
-								type="text"
-								name="buyerAgentName"
-								id="buyerAgentName"
-							/>
-						</div>
-						<div className="col">
-							<label for="buyerAgentEmail">Email</label>
-							<input
-								className="form-control"
-								type="email"
-								name="buyerAgentEmail"
-								id="buyerAgentEmail"
-							/>
-						</div>
-						<div className="col">
-							<label for="buyerAgentPhone">Phone Number</label>
-							<input
-								className="form-control"
-								type="tel"
-								name="buyerAgentPhone"
-								id="buyerAgentPhone"
-							/>
-						</div>
-					</div>
-
-					<h5>Payment Information</h5>
-					<p className="text-danger">
-						**Please note that if paying by check, it must be
-						presented at time of service**
-					</p>
-					<p className="text-danger">
-						**Please also note that we <b>DO NOT</b> bill through
-						escrow**
-					</p>
-					<div className="form-row">
-						<div className="col">
-							<label for="paymentType">Payment Type:</label>
-							<div className="form-check form-check-inline">
-								<input
-									className="form-check-input"
-									type="radio"
-									value="Check"
-									name="paymentType"
-									id="Check"
-									checked
-								/>
-								<label
-									className="form-check-label col-form-label"
-									for="Check"
-								>
-									Check
-								</label>
-							</div>
-							<div className="form-check form-check-inline">
-								<input
-									className="form-check-input"
-									type="radio"
-									value="Credit"
-									name="paymentType"
-									id="Credit"
-								/>
-								<label
-									className="form-check-label col-form-label"
-									for="Credit"
-								>
-									Credit
-								</label>
-							</div>
-						</div>
-					</div>
-
-					<div className="form-row">
-						<div className="col">
-							<label for="payerName">Name on Card:</label>
-							<input
-								type="text"
-								className="form-control"
-								name="payerName"
-								id="payerName"
-							/>
-						</div>
-						<div className="col">
-							<label for="cardNumber">Card Number:</label>
-							<input
-								type="text"
-								className="form-control"
-								name="cardNumber"
-								id="cardNumber"
-							/>
-						</div>
-					</div>
-					<div className="form-row">
-						<div className="col">
-							<label for="Expiration">Expiration:</label>
-							<input
-								type="text"
-								className="form-control"
-								name="Expiration"
-								id="Expiration"
-							/>
-						</div>
-						<div className="col">
-							<label for="CVV">CVV:</label>
-							<input
-								type="text"
-								className="form-control"
-								name="CVV"
-								id="CVV"
-							/>
-						</div>
-						<div className="col">
-							<label for="cardNumber">Billing ZIP:</label>
-							<input
-								type="text"
-								className="form-control"
-								name="billingZip"
-								id="billingZip"
-							/>
-						</div>
-					</div>
-
-					<div className="form-row">
-						<div className="col">
-							<label for="certifiedTrue" className="text-danger">
+					
+					
+					<div className={styles.formRow}>
+						<div className={styles.formRow}>
+							<label htmlFor="certifiedTrue" className="text-danger">
 								I certify that the above is true and correct to
-								the best of my knowledge
+								the best of my knowledge 
 							</label>
-						</div>
-						<div className="col">
+							{" "}
 							<input
 								className="form-check-input"
 								type="checkbox"
@@ -574,30 +405,37 @@ export default function Inspection() {
 							/>
 						</div>
 					</div>
-					<div className="form-row">
-						<div className="col">
-							<label for="requestorFirst">First name:</label>
+					<div className={styles.formRow}>
+						<div className={styles.col}>
+							<label htmlFor="requestorFirst">First name:</label>
 							<input
 								type="name"
-								className="form-control"
+								className={styles.input25}
 								name="requestorFirst"
 								id="requestorFirst"
 								required
 							/>
 						</div>
-						<div className="col">
-							<label for="requestorLast">Last Name:</label>
+						<div className={styles.col}>
+							<label htmlFor="requestorLast">Last Name:</label>
 							<input
 								type="name"
-								className="form-control"
+								className={styles.input25}
 								name="requestorLast"
 								id="requestorLast"
 								required
 							/>
 						</div>
 					</div>
-
-					<input className="form-control" type="submit" />
+					<p className={styles.textDanger}>
+						**Please note that payment must be
+						presented at time of service**
+					</p>
+					<p className={styles.textDanger}>
+						**Please also note that we <b>DO NOT</b> bill through
+						escrow**
+					</p>
+					<button className={styles.submit} type="submit">Submit Form</button>
 				</form>
 			</main>
 		</>

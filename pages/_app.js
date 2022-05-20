@@ -1,11 +1,16 @@
 import Head from "next/head";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import ContactForm from "../components/contactForm";
 import Footer from "../components/footer";
+import logRoutes from "../components/hooks/logRoutes";
 import Nav from "../components/nav";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
+	
 	return (
+		
 		<>
 			<Head>
 				<meta charSet="utf-8" />

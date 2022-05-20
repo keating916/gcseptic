@@ -31,19 +31,19 @@ export default function Home() {
 				/>
 			</Head>
 			<main>
-				<div className="text-center">
-					<h1 className="display-4">G&amp;C Septic Services</h1>
-					<p className="lead">
-						G &amp; C Septic Tank Service has been in business for
-						over 50 years. Serving Sacramento and San Joaquin
-						Counties, we are your trusted Septic Tank service
-						provider.
-					</p>
+				<div className="text-center jumbotron ">
+					<h1>G&amp;C Septic Services</h1>
 					<Carousel photos={carouselPhotos} />
 
 				</div>
 				<div className="container">
 					<div className="row text-center"></div>
+					<h3 className="text-center w95">
+						G &amp; C Septic Tank Service has been in business for
+						over 50 years. Serving Sacramento and San Joaquin
+						Counties, we are your trusted Septic Tank service
+						provider.
+					</h3>
 					<h1 className="text-center">
 						<span className="label label-default center-block">
 							Services
