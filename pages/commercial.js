@@ -70,7 +70,7 @@ export default function Commercial() {
 						</div>
 						<p>
 							Your business could become the talk of the
-							neighborhood! Just be sure that it isn't for the
+							neighborhood! Just be sure that it isn&apos;t for the
 							wrong reason! Call us before you have a smelly
 							problem on your hands at{" "}
 							<a href="tel:9163661111">916-366-1111</a>, or

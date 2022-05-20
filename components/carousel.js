@@ -5,10 +5,7 @@ import styles from '../styles/carousel.module.css';
 
 const Carousel = (props) => {
 
-    if(!Array.isArray(props.photos)) {
-        console.log("No images for Carousel");
-        return null;
-    }
+    
 
     let images = props.photos;
     const [ index, setIndex ] = useState(0);
@@ -38,7 +35,11 @@ const Carousel = (props) => {
     useInterval(() => {
         nextSlide("TIMER");
     }, 5000)
-
+    
+    if(!Array.isArray(props.photos)) {
+            console.log("No images for Carousel");
+            return null;
+        }
     let currentImage = images[index];
 
     return(

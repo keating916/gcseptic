@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Link from "next/link";
+
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Carousel from "../components/carousel";
@@ -51,82 +53,97 @@ export default function Home() {
 					</h1>
 					<div className="card-row">
 							<div className="card link-card">
-								<a href="/residential">
+								<Link href="/residential">
 									<img
 										className="card-img-top"
 										src="images/pumping2.webp"
 										alt="Septic Tank Pumping"
 									/>
-								</a>
+								</Link>
 								<div className="card-body">
+									<Link href="/residential">
 									<h4 className="card-title">
 										Home Septic Pumping
 									</h4>
+									</Link>
+									<Link href="/residential">
+
 									<p className="card-text">
 										Keeping your home system running
 										correctly is our top priority. Call us
 										before you have a smelly mess in your
 										yard!
 									</p>
-									<a
+									</Link>
+									<Link
 										href="/residential"
 										className="btn btn-primary"
 									>
 										Find out more
-									</a>
+									</Link>
 								</div>
 						</div>
 							<div className="card link-card">
-								<a href="/commercial">
+								<Link href="/commercial">
 									<img
 										className="card-img-top"
 										src="images/commercial.webp"
 										alt="Man hooking up pumping line to truck"
 									/>
-								</a>
+								</Link>
 								<div className="card-body">
+									<Link href="/commercial">
+
 									<h4 className="card-title">
 										Commercial Services
 									</h4>
+									</Link>
+									<Link href="/commercial">
 									<p className="card-text">
 										Keep your business from being the talk
 										of the neighborhood in a bad way! Call
 										us today to schedule your regular
 										service.
 									</p>
-
-									<a
+									</Link>
+									<Link
 										href="/commercial"
 										className="card-button"
 									>
 										Find out more
-									</a>
+									</Link>
 								</div>
 							</div>
 							<div className="card link-card">
-								<a href="/construction">
+								<Link href="/construction">
 									<img
 										className="card-img-top"
 										src="images/backhoe.webp"
 										alt="Digging with a backhoe"
 									/>
-								</a>
+								</Link>
 								<div className="card-body">
+									<Link href="/construction">
+
 									<h4 className="card-title">
 										Construction Services
 									</h4>
+									</Link>
+									<Link href="/construction">
+
 									<p className="card-text">
 										Whether you need a new system installed
 										or just a few repairs. With over 50
 										years combined experience, we can handle
 										it!
 									</p>
-									<a
+									</Link>
+									<Link
 										href="/construction"
 										className="btn btn-primary"
 									>
 										Find out more
-									</a>
+									</Link>
 								</div>
 						</div>
 					</div>
