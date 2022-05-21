@@ -11,6 +11,8 @@ export function middleware(request: NextRequest) {
     let img = /image/
     let url = request.page.name 
 
+    let headers = request.headers
+
     if(url != undefined) {
 
         if (!cookieFromRequest) { //if cookie doesn't exist or is expired
@@ -32,6 +34,7 @@ export function middleware(request: NextRequest) {
                 path: url,
                 visitor: cookieFromRequest,
                 timeStamp: date,
+                headers: headers,
             }
             console.log(r)
         }
