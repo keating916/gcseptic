@@ -35,7 +35,7 @@ export default class ContactForm extends Component {
             ...this.state, 
             error: false
         })
-        axios.post('/api/email', {params})
+        axios.post('/api/contactFormApi', {params})
         .then(response => {
             if(response.data === 'OK') {
                 this.setState({
@@ -75,7 +75,7 @@ export default class ContactForm extends Component {
                                     <input className={styles.formControl} type="text" name="address" placeholder="Service Address"  value={this.state.address} onChange={this.handleChange}  required />
                                     <textarea name="comments" className={styles.formControl} placeholder="Comments" id="contactTextArea"  value={this.state.comments } onChange={this.handleChange}  ></textarea>
                                     <button className={styles.formControl} type="submit" id="formSubmitButton" disabled={d} onClick={evt => this.handleSubmit(evt)}>Submit</button>
-                                </form>
+                                </form>c
                         </div>
                     </div>
                 </>
@@ -83,7 +83,20 @@ export default class ContactForm extends Component {
         }else {
             return(
                 <main className={styles.main}>
-                    <div className={styles.textCenter}>Thank you, your contact form has been submitted!</div>
+                    <hr className={styles.divider} />
+                    <p />
+                    <p />
+                    <p />
+                    <p />
+                    <p />
+                    <div className={styles.textCenter}><h3>Thank you, your contact form has been submitted!</h3></div>
+                    <p />
+                    <p />
+                    <p />
+                    <p />
+                    <p />
+                    <p />
+
                 </main>
             )
         }

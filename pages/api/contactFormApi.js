@@ -1,12 +1,18 @@
 import axios from "axios";
 
 export default async function email(req, res) {
+	if(req.method != "POST" || req.headers.origin != 'https://gandcseptic.com') { 
+		console.log(req.method)
+		console.log(req.headers.origin)
+        res.status(400)
+        res.send("error")
+    }else {    
 	//uses axios to send contact form information to email client without compromising access token since it is from the server
-	/* const user_ID = "user_mX30CEcEYTVb7EG39rmYu";
-	const serviceID = "RLS Contact Form";
-	const templateID = "RLS";
+	const user_ID = "6tsHDpeIkl5xVW3md";
+	const serviceID = "GcSeptic";
+	const templateID = "GCSeptic";
 	const template_params = req.body.params;
-	const access_token = "216b45fad4abda169e2d724843d2ec58";
+	const access_token = "UXXrf7E_yy_WXvDaTCqSf";
 	var data = {
 		service_id: serviceID,
 		template_id: templateID,
@@ -23,16 +29,7 @@ export default async function email(req, res) {
 		.catch((error) => {
 			console.log(error.response.data);
 			res.status(500).send("Error");
-		}); */
-    console.log(`Method: ${req.method}      ${req.method === 'POST'} `  )
-    console.log(`Origin:  ${req.headers.origin}          ${req.headers.origin === 'http://localhost:3000'}`)
-    if(req.method != "POST" || req.headers.origin != 'http://localhost:3000') {   /* || req.headers.origin !== 'https://gandcseptic.com'*/
-        res.status(400)
-        res.send("error")
-    }else {
-        res.send(200);
-    }
+		}); 
+	}
+    
 }
-
-
-//TODO Remove Localhost when in production
