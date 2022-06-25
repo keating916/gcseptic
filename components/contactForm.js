@@ -75,14 +75,14 @@ export default class ContactForm extends Component {
                                     <input className={styles.formControl} type="text" name="address" placeholder="Service Address"  value={this.state.address} onChange={this.handleChange}  required />
                                     <textarea name="comments" className={styles.formControl} placeholder="Comments" id="contactTextArea"  value={this.state.comments } onChange={this.handleChange}  ></textarea>
                                     <button className={styles.formControl} type="submit" id="formSubmitButton" disabled={d} onClick={evt => this.handleSubmit(evt)}>Submit</button>
-                                </form>c
+                                </form>
                         </div>
                     </div>
                 </>
             )
         }else {
             return(
-                <main className={styles.main}>
+                <div className={styles.main}>
                     <hr className={styles.divider} />
                     <p />
                     <p />
@@ -97,7 +97,7 @@ export default class ContactForm extends Component {
                     <p />
                     <p />
 
-                </main>
+                </div>
             )
         }
     }

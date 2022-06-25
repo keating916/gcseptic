@@ -46,8 +46,11 @@ const Carousel = (props) => {
         <div className={styles.slideshowContainer}>
 
             <div className={`${styles.mySlides}, ${styles.fade}`}>
-                <img src={currentImage.image} className={styles.bannerImage} alt={currentImage.alt} layout="responsive" />
-                <div className={styles.text}>{currentImage.caption}</div>
+                <div className={styles.bannerImage}>
+                    <Image src={currentImage.image}  alt={currentImage.alt} layout="fill" priority />
+                    <div className={styles.text}>{currentImage.caption}</div>
+                </div>
+                
             </div>
             <a className={styles.prev} name="prev" onClick={e => nextSlide(e)}>&#10094;</a>
             <a className={styles.next} name="next" onClick={e => nextSlide(e)}>&#10095;</a>
