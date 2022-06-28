@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 
+import * as ga from '../lib/ga'
+
 import styles from '../styles/ContactForm.module.css'
 
 export default class ContactForm extends Component {
@@ -49,6 +51,12 @@ export default class ContactForm extends Component {
                 ...this.state, 
                 error: true
             })
+        })
+        ga.event({
+            action: "generate_lead",
+            params : {
+              lead_source: "Quick Contact Form"
+            }
         })
     }
 

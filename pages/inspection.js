@@ -2,6 +2,8 @@ import Head from "next/head";
 import { Component } from "react";
 import axios from "axios";
 
+import * as ga from '../lib/ga'
+
 import styles from "../styles/inspection.module.css";
 
 export default class Inspection extends Component {
@@ -71,6 +73,12 @@ export default class Inspection extends Component {
                 ...this.state, 
                 error: true
             })
+        })
+		ga.event({
+            action: "generate_lead",
+            params : {
+              lead_source: "Inspection Request Form"
+            }
         })
     }
 	render(){
