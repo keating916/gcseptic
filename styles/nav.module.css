@@ -88,6 +88,48 @@
 	font-size: x-large;
 }
 
+.modal {
+	position: fixed;
+	z-index: 3;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	overflow: scroll;
+}
+
+.modalBackground {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	opacity: 40%;
+	background-color: white;
+}
+
+.modalBody {
+	position: relative;
+	background-color: lightgray;
+	border: 2px solid #022972;
+	z-index: 5;
+	opacity: 100;
+	margin: 5% 20% 10%;
+	border-radius: 20px;
+	max-width: 100%;
+	
+}
+
+.closebutton {
+	cursor: pointer;
+	position: absolute;
+	color: #022972;
+	left: 85%;
+	padding: .8em;
+	margin: 0;
+}
+
+
 
 @media screen and (min-width: 761px) {
 
@@ -188,5 +230,17 @@
 
 	.contactButton {
 		display: none;
+	}
+
+	.modalBody {
+		position: relative;
+		background-color: lightgray;
+		border: 2px solid #022972;
+		z-index: 5;
+		opacity: 100;
+		margin: 5% 3% 10%;
+		border-radius: 20px;
+		
+		max-width: 100%;
 	}
 }

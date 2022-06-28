@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import styles from "../styles/nav.module.css";
+import ContactForm from "./contactForm";
 
 export default function Nav() {
-	const [dropdown, setdropdown] = useState(false);
-	const [changed, setchanged] = useState(false);
+	const [ showModal, setShowModal ] = useState(false);
+	const [ dropdown, setdropdown ] = useState(false);
+	const [ changed, setchanged ] = useState(false);
 
 	const handleDropdown = () => {
 		setdropdown(!dropdown);
@@ -21,6 +23,15 @@ export default function Nav() {
 		setchanged(false);
 		setdropdown(false);
 	}
+
+	const handleModal = () => {
+		setShowModal(!showModal);
+	}
+	
+	useEffect(() => {
+		const body = document.querySelector('body');
+    	body.style.overflow = showModal ? 'hidden' : 'auto';
+	}, [showModal])
 
 	return (
 		<nav className={styles.navContainer}>
@@ -112,7 +123,7 @@ export default function Nav() {
 				</div>
 			</div>
 			<div>
-				<p className={`${styles.changeCursor} ${styles.contactButton}`}>Contact Us</p>
+				<p className={`${styles.changeCursor} ${styles.contactButton}`} onClick={() => handleModal()}>Contact Us</p>
 				<a
 					href="tel:9163661111"
 					className={styles.navPhone}
@@ -122,6 +133,16 @@ export default function Nav() {
 					Call us: 916-366-1111
 				</a>
 			</div>
+			{showModal && 
+				<div className={styles.modal}>
+					<div className={styles.modalBackground} onClick={() => handleModal()}></div>
+					<div className={styles.modalBody}>
+						<h1 className={styles.closebutton} onClick={() => handleModal()}>&times;</h1>
+						<h2>Contact Form</h2>
+						<p>Please complete the form below and we will get back to you ASAP</p>
+						<ContactForm />
+					</div>
+				</div>}
 		</nav>
 	);
 }

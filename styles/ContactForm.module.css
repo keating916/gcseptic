@@ -1,6 +1,6 @@
 
 .main {
-    padding: 2rem 0;
+    padding: 0 0 2rem 0;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -19,14 +19,19 @@
 
 .formControl {
     color: #000;
-    width: 90vw;
+    width: 90%;
     border: 1px solid black;
     border-radius: 5px;
+    height:1.8rem;
+    line-height: 1.8rem;
 }
 
-#contactTextArea {
-    width: 90vw;
+.contactTextArea {
+    margin-top: .4rem;
+    width: 90%;
     border: 1px solid black;
+    border-radius: 5px;
+    height: 4rem;
 }
 
 .error {
@@ -34,6 +39,3 @@
     text-decoration: underline;
 }
 
-.divider {
-    width:90%;
-}

@@ -59,23 +59,20 @@ export default class ContactForm extends Component {
         if(!this.state.submitted) {
             return (
                 <>
-                    <hr className={styles.divider} />
-                    <div className="text-center">
-                        <h4 className='w95'>You can also use the form below, and we will get back to you as soon as possible!</h4>
-                    </div>
+                    
                     <div className={styles.main}>
                         <div className={styles.textCenter}>
-                            <h3>Quick Contact</h3>
-                                {error ? <p className={styles.error}>There has been an error</p> : <p>&nbsp;</p>}
+                                
                                 <form className={styles.formContainer} action='none'>
                                     <input className={styles.formControl} type="text" name="fname" placeholder="First Name" value={this.state.fname} onChange={this.handleChange} required />
                                     <input className={styles.formControl} type="text" name="lname" placeholder="Last Name"  value={this.state.lname} onChange={this.handleChange}  required />
                                     <input className={styles.formControl} type="email" name="contactEmail" placeholder="Email: you@yourdomain.com"  value={this.state.contactEmail} onChange={this.handleChange}  required />
                                     <input className={styles.formControl} type="phone" name="contactPhone" placeholder="Phone: 111-111-1111"  value={this.state.contactPhone}  required onChange={this.handleChange}  />
                                     <input className={styles.formControl} type="text" name="address" placeholder="Service Address"  value={this.state.address} onChange={this.handleChange}  required />
-                                    <textarea name="comments" className={styles.formControl} placeholder="Comments" id="contactTextArea"  value={this.state.comments } onChange={this.handleChange}  ></textarea>
+                                    <textarea name="comments" className={`${styles.contactTextArea} ${styles.formcontrol}`} placeholder="Comments" id="contactTextArea"  value={this.state.comments } onChange={this.handleChange}  ></textarea>
                                     <button className={styles.formControl} type="submit" id="formSubmitButton" disabled={d} onClick={evt => this.handleSubmit(evt)}>Submit</button>
                                 </form>
+                                {error ? <p className={styles.error}>There has been an error</p> : <p>&nbsp;</p>}
                         </div>
                     </div>
                 </>
