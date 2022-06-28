@@ -54,9 +54,8 @@ export default class ContactForm extends Component {
         })
         ga.event({
             action: "generate_lead",
-            params : {
-              lead_source: "Quick Contact Form"
-            }
+            event_label: "Quick contact Form"
+            
         })
     }
 

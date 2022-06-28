@@ -76,9 +76,7 @@ export default class Inspection extends Component {
         })
 		ga.event({
             action: "generate_lead",
-            params : {
-              lead_source: "Inspection Request Form"
-            }
+            event_label: "Inspection Request"
         })
     }
 	render(){
