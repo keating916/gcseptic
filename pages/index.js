@@ -1,11 +1,8 @@
 import Head from "next/head";
-import Link from "next/link";
 
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import Carousel from "../components/carousel";
-import carouselPhotos from '../components/carouselPhotos'
-
+import carouselPhotos from "../components/carouselPhotos";
+import HomeCard from "../components/homeCard";
 
 export default function Home() {
 	return (
@@ -36,7 +33,6 @@ export default function Home() {
 				<div className="text-center jumbotron ">
 					<h1>G&amp;C Septic Services</h1>
 					<Carousel photos={carouselPhotos} />
-
 				</div>
 				<div className="container">
 					<div className="row text-center"></div>
@@ -52,100 +48,36 @@ export default function Home() {
 						</span>
 					</h1>
 					<div className="card-row">
-							<div className="card link-card">
-								<Link href="/residential">
-									<img
-										className="card-img-top"
-										src="images/pumping2.webp"
-										alt="Septic Tank Pumping"
-									/>
-								</Link>
-								<div className="card-body">
-									<Link href="/residential">
-									<h4 className="card-title">
-										Home Septic Pumping
-									</h4>
-									</Link>
-									<Link href="/residential">
-
-									<p className="card-text">
-										Keeping your home system running
+						<HomeCard
+							target="/residential"
+							image="images/pumping2.webp"
+							title="Home Septic Pumping"
+							aText="Septic Tank Pumping"
+							cText="Keeping your home system running
 										correctly is our top priority. Call us
 										before you have a smelly mess in your
-										yard!
-									</p>
-									</Link>
-									<Link
-										href="/residential"
-										className="btn btn-primary"
-									>
-										Find out more
-									</Link>
-								</div>
-						</div>
-							<div className="card link-card">
-								<Link href="/commercial">
-									<img
-										className="card-img-top"
-										src="images/commercial.webp"
-										alt="Man hooking up pumping line to truck"
-									/>
-								</Link>
-								<div className="card-body">
-									<Link href="/commercial">
-
-									<h4 className="card-title">
-										Commercial Services
-									</h4>
-									</Link>
-									<Link href="/commercial">
-									<p className="card-text">
-										Keep your business from being the talk
+										yard!"
+						/>
+						<HomeCard
+							target="/commercial"
+							image="images/commercial.webp"
+							title="Commercial Services"
+							aText="Man hooking up pumping line to truck"
+							cText="Keep your business from being the talk
 										of the neighborhood in a bad way! Call
 										us today to schedule your regular
-										service.
-									</p>
-									</Link>
-									<Link
-										href="/commercial"
-										className="card-button"
-									>
-										Find out more
-									</Link>
-								</div>
-							</div>
-							<div className="card link-card">
-								<Link href="/construction">
-									<img
-										className="card-img-top"
-										src="images/backhoe.webp"
-										alt="Digging with a backhoe"
-									/>
-								</Link>
-								<div className="card-body">
-									<Link href="/construction">
-
-									<h4 className="card-title">
-										Construction Services
-									</h4>
-									</Link>
-									<Link href="/construction">
-
-									<p className="card-text">
-										Whether you need a new system installed
-										or just a few repairs. With over 50
-										years combined experience, we can handle
-										it!
-									</p>
-									</Link>
-									<Link
-										href="/construction"
-										className="btn btn-primary"
-									>
-										Find out more
-									</Link>
-								</div>
-						</div>
+										service."
+						/>
+						<HomeCard
+							target="/construction"
+							image="images/backhoe.webp"
+							title="Construction Services"
+							aText="Digging with a backhoe"
+							cText="Whether you need a new system installed
+							or just a few repairs. With over 50
+							years combined experience, we can handle
+							it!"
+						/>
 					</div>
 				</div>
 			</main>
