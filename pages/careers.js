@@ -49,6 +49,7 @@ export default function Careers() {
                             {currentjob.preferred.map((req, index) => <li key={`p${index}`}>{req}</li>)}
                         </ul>
                     </div>
+                    <h3><a href={`mailto:jobs@septicservicesgroup.com?subject=Resume for ${currentjob.title}`}> Click here to email us about he position. Be sure to attach your resume</a></h3>
                 </div>
             </div>
         </main>
