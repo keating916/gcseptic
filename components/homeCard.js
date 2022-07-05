@@ -6,7 +6,7 @@ import styles from '../styles/homecard.module.css'
 const HomeCard = (props) => {
 	const { target, image, title, aText, cText } = props;
 	return (
-		<Link href={target}>
+		<Link href={target} passHref>
             <div className={styles.card}>
                 <div className={styles.cardImgTop}>
                    <Image

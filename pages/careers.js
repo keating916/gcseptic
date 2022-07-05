@@ -49,71 +49,9 @@ export default function Careers() {
                             {currentjob.preferred.map((req, index) => <li key={`p${index}`}>{req}</li>)}
                         </ul>
                     </div>
-                    <h3><a href={`mailto:jobs@septicservicesgroup.com?subject=Resume for ${currentjob.title}`}> Click here to email us about he position. Be sure to attach your resume</a></h3>
+                    <h3><a href={`mailto:jobs@septicservicesgroup.com?subject=Resume for ${currentjob.title}`} style={{textDecoration: 'underline'}}> Click here to email us about the position. Be sure to attach your resume</a></h3>
                 </div>
             </div>
         </main>
     )
 }
-
-/* let td = document.getElementById("TD");
-let	cw = document.getElementById("CW");
-let st = document.getElementById("ST");
-let csr = document.getElementById("CSR");
-let jobReq = document.getElementById("jobReq");
-let jobDesc = document.getElementById("jobDesc")
-let jobPref = document.getElementById("jobPref");
-let jobTitle = document.getElementById("jobTitle");
-let toggleButton = document.getElementById("menu-toggle");
-let list = document.getElementById("listGroup");
-let listHead = document.getElementById("listHeading");
-
-//Remove All Child Elements from node
-function removeAllChildren(item) {
-	while(item.firstChild) {
-		item.removeChild(item.firstChild);
-	}
-}
-
-
-
-let ar = [td, cw, st, csr]; //Array of the positions
-
-ar.map(el => {
-	//Add Event Listener to each Job Element
-	el.addEventListener("click", e => {
-		//handle side nav buttons
-		ar.map(i => {
-			if(i.id == e.target.id) {
-				i.disabled = true;
-				i.style.border = "1px solid black";
-				
-			}else {
-				i.disabled = false;
-				i.style.border = "1px hidden black";
-			}
-		});
-		//set career information on page
-		jobTitle.innerHTML = e.target.value;
-		jobDesc.innerHTML = descriptions[e.target.id].description;
-		removeAllChildren(jobReq);
-		removeAllChildren(jobPref);
-		for(let i = 0; i < descriptions[e.target.id].requirements.length; i++) {
-			let item = document.createElement("li");
-			item.innerHTML = descriptions[e.target.id].requirements[i];
-			jobReq.appendChild(item);
-		}
-		for(let i = 0; i < descriptions[e.target.id].preferred.length; i++) {
-			let item = document.createElement("li");
-			item.innerHTML = descriptions[e.target.id].preferred[i];
-			jobPref.appendChild(item);
-		}
-		//Change Hidden radio button to correcct 
-		document.getElementById(descriptions[e.target.id].radio).checked = true;
-	})
-})
-
-//rotate button that hides side menu
-toggleButton.addEventListener("click", () => {
-	toggleButton.classList.toggle("rotated");
-}); */

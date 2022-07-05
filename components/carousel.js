@@ -4,9 +4,6 @@ import styles from '../styles/carousel.module.css';
 
 
 const Carousel = (props) => {
-
-    
-
     let images = props.photos;
     const [ index, setIndex ] = useState(0);
     const [ lastChange, setLastChange ] = useState(0);
@@ -44,10 +41,9 @@ const Carousel = (props) => {
 
     return(
         <div className={styles.slideshowContainer}>
-
             <div className={`${styles.mySlides}, ${styles.fade}`}>
                 <div className={styles.bannerImage}>
-                    <Image src={currentImage.image}  alt={currentImage.alt} layout="fill" priority />
+                    <Image src={currentImage.image}  alt={currentImage.alt} layout="fill" priority={index == 0 ? true : false} />
                     <div className={styles.text}>{currentImage.caption}</div>
                 </div>
                 

@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import * as ga from '../lib/ga'
+
+
 import styles from "../styles/nav.module.css";
 import ContactForm from "./contactForm";
 
@@ -26,6 +29,16 @@ export default function Nav() {
 
 	const handleModal = () => {
 		setShowModal(!showModal);
+	}
+
+	const handleCall = () => {
+		ga.event({
+            action: "generate_lead",
+            params : {
+              event_label: "Phone Call"
+            }
+        })
+		return true;
 	}
 	
 	useEffect(() => {
@@ -129,6 +142,7 @@ export default function Nav() {
 					className={styles.navPhone}
 					rel="referrer"
 					id="navPhone"
+					onClick={() => handleCall()}
 				>
 					Call us: 916-366-1111
 				</a>
