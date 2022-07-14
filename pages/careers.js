@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 import jobs from '../components/jobsData';
 
+import Head from 'next/head';
+
 import styles from '../styles/careers.module.css'
 
 export default function Careers() {
@@ -21,6 +23,9 @@ export default function Careers() {
 
     return(
         <main className={styles.container}>
+            <Head>
+				<title>G&amp;C Careers</title>
+			</Head>
             {/* <!-- Sidebar --> */}
             <div className={menuToggle ? styles.menuHidden : styles.sidebarContainer} id="sidebar-wrapper">
                 <div className={styles.sidebar} id="listGroup">
